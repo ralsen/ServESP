@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Dies soll eine XML werden zum komfortablen steuern der Devices -->
+<!-- https://www.python-forum.de/viewtopic.php?t=33485c -->
+<!-- http://www.willemer.de/informatik/python/xml.htm -->
+<!-- !!! see a description of the XML-Structure at the end of this file !!! -->
+<!--    Version 1.21 23.06.19
+            configuration for the ServESP server
+            
+        Version 1.0 17.06.2019
+            init Version
+-->
+<Device_Switch>
+    <HardwareSec>
+        <Type>Switch</Type>
+        <Hardw>SONOFF_S20</Hardw>
+        <ChipID>E3:3C:F6:4D</ChipID>
+        <MAC>CC:50:E3:53:1E:58</MAC>
+    </HardwareSec>
+    <ConfComSec>       <!-- common section -->
+        <Name>Steckdose-Buero</Name>
+        <IP_Mode>DHCP</IP_Mode>
+        <PageReload>10</PageReload>
+        <Service>s.php</Service>
+        <ServerIP>family.local</ServerIP>
+        <Network>janzneu</Network>
+        <APName>HOMAnet</APName>
+        <Hash>0x3bf382</Hash>
+        <ConfSize>0x118</ConfSize>
+        <TransCycle>3600</TransCycle>
+        <Version>1.5k</Version>
+    </ConfComSec>		<!-- common section -->
+    
+    <ConfAppSec>       <!-- application section (could be empty, e.g. for temp-sensors / or could contain the last transmitted values) -->
+        <On>SunSet</On>
+        <Off>SunRise</Off>
+    </ConfAppSec>       <!-- application section -->
+    <VarComSec>        <!-- variable section -->
+        <Active>Yes</Active>
+        <IP>192.168.1.38</IP>
+        <Systick>1582047249</Systick>
+        <uptime>1654730</uptime>
+        <UptimeTotal>var</UptimeTotal>
+        <delivPages>139</delivPages>
+        <delivPagesTotal>0</delivPagesTotal>
+        <Trans>0</Trans>
+        <TransTotal>0</TransTotal>
+        <goodTrans>486</goodTrans>
+        <goodTransTotal>0</goodTransTotal>
+        <badTrans>2</badTrans>
+        <badTransTotal>0</badTransTotal>        
+    </VarComSec>       <!-- variable section -->
+    <VarAppSec>
+        <ontime>24779</ontime>
+        <OntimeTotal>var</OntimeTotal>
+        <offtime>1629951</offtime>
+        <OfftimeTotal>var</OfftimeTotal>
+        <cycles>30</cycles>
+        <CyclesTotal>var</CyclesTotal>
+        <status>AUS</status>    
+    </VarAppSec>
+</Device_Switch>

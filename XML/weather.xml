@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Dies soll eine XML werden zum komfortablen steuern der Devices -->
+<!-- https://www.python-forum.de/viewtopic.php?t=33485c -->
+<!-- http://www.willemer.de/informatik/python/xml.htm -->
+<!-- !!! see a description of the XML-Structure at the end of this file !!! -->
+<!--    Version 1.21 23.06.19
+            configuration for the ServESP server
+            
+    History:
+    16.12.19    V1.0a   <HardwareSec> added for values that couldnt be changed (normaly)
+    19.11.19    V1.0a   new structure for single XML for eauch device
+    17.06.19    V1.0    init Version
+-->
+<Device>
+    <HardwareSec>
+        <Type>Weather</Type>
+        <Hardw>Pseudo</Hardw>
+        <ChipID>{xx:xx:xx:xx}</ChipID> <!-- ChipID weiterhin mitfuehren? -->
+        <MAC>{xx:xx:xx:xx:xx:xx}</MAC>
+    </HardwareSec>
+    <ConfComSec>       <!-- common section -->
+        <Name>{NAME}</Name>
+        <IP_Mode>PSEUDO</IP_Mode>		// not needed
+        <PageReload>PSEUDO</PageReload>		// not needed
+        <Service>s.php</Service>		// not needed
+        <ServerIP>192.168.1.28</ServerIP>	// not needed
+        <Network>janzneu</Network>		// not needed
+        <APName>HOMAnet</APName>		// not needed
+        <Hash>0x1403c8</Hash>			// not needed
+        <ConfSize>0x118</ConfSize>		// not needed
+        <TransCycle>300</TransCycle>		// not needed
+        <Version>1.5d</Version>			// vielleicht
+    </ConfComSec>		<!-- common section -->
+    <ConfAppSec>       <!-- application section (could be empty, e.g. for temp-sensors / or could contain the last transmitted values) -->
+        <MeasCycle>150</MeasCycle>		// not needed
+        <Sensors>
+            <Sensor>
+                <Adr>pseudo</Adr>		// pseudo ???
+                <Name>Fenster</Name>
+                <Database>temp0</Database>
+                <Color>#00FF00</Color>
+            </Sensor>
+            <Sensor>
+                <Adr>28aa3d1419130212</Adr>	// pseudo ???
+                <Name>Schreibtisch</Name>
+                <Database>temp1</Database>
+                <Color>#0000FF</Color>
+            </Sensor>
+            <Sensor>
+                <Adr>OutTemp</Adr>		// pseudo ???
+                <Name>Aussen</Name>
+                <Database>temp2</Database>
+                <Color>#FFA500</Color>
+            </Sensor>
+        </Sensors>
+    </ConfAppSec>       <!-- application section -->
+    <VarComSec>        <!-- variable section -->
+        <Active>Yes</Active>
+        <IP>192.168.1.22</IP>			// not needed
+        <Systick>1607098833</Systick>		// not needed
+        <uptime>78008</uptime>			// not needed
+        <UptimeTotal>2345</UptimeTotal> 	// not needed
+        <delivPages>1</delivPages>		// not needed
+        <delivPagesTotal>23</delivPagesTotal>	// not needed
+        <PageReload>10</PageReload>		// not needed
+        <Trans>45</Trans>			// not needed
+        <TransTotal>56</TransTotal>		// not needed
+        <goodTrans>260</goodTrans>		// not needed
+        <goodTransTotal>78</goodTransTotal>	// not needed
+        <badTrans>0</badTrans>			// not needed
+        <badTransTotal>90</badTransTotal>	// not needed
+    </VarComSec>       <!-- variable section -->
+    <VarAppSec>
+        <LastValues>1</LastValues>		// not needed
+        <LastValues>2</LastValues>		// not needed
+        <LastValues>3</LastValues>		// not needed
+	</VarAppSec>
+</Device>

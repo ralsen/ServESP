@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Dies soll eine XML werden zum komfortablen steuern der Devices -->
+<!-- https://www.python-forum.de/viewtopic.php?t=33485c -->
+<!-- http://www.willemer.de/informatik/python/xml.htm -->
+<!-- !!! see a description of the XML-Structure at the end of this file !!! -->
+<!--    Version 1.21 23.06.19
+            configuration for the ServESP server
+            
+    History:
+    16.12.19    V1.0a   <HardwareSec> added for values that couldnt be changed (normaly)
+    19.11.19    V1.0a   new structure for single XML for eauch device
+    17.06.19    V1.0    init Version
+-->
+<Device_DS1820>
+    <HardwareSec>
+        <Type>DS1820</Type>
+        <Hardw>NODEMCU</Hardw>
+        <ChipID>8911566</ChipID>
+        <MAC>68:C6:3A:87:FA:CE</MAC>
+    </HardwareSec>
+    <ConfComSec>       <!-- common section -->
+        <Name>Buero</Name>
+        <IP_Mode>DHCP</IP_Mode>
+        <PageReload>10</PageReload>
+        <Service>s.php</Service>
+        <ServerIP>192.168.1.28</ServerIP>
+        <Network>janzneu_u</Network>
+        <APName>HOMAnet</APName>
+        <Hash>0x627c7e</Hash>
+        <ConfSize>0x118</ConfSize>
+        <TransCycle>300</TransCycle>
+        <Version>1.25</Version>
+    </ConfComSec>		<!-- common section -->
+    <ConfAppSec>       <!-- application section (could be empty, e.g. for temp-sensors / or could contain the last transmitted values) -->
+        <MeasCycle>150</MeasCycle>
+        <Sensors>
+            <Sensor>
+                <Adr>28aa260619130221</Adr>
+                <Name>Fenster</Name>
+                <Database>temp0</Database>
+                <Color>#00FF00</Color>
+            </Sensor>
+            <Sensor>
+                <Adr>28aa3d1419130212</Adr>
+                <Name>Schreibtisch</Name>
+                <Database>temp1</Database>
+                <Color>#0000FF</Color>
+            </Sensor>
+            <Sensor>
+                <Adr>OutTemp</Adr>
+                <Name>Aussen</Name>
+                <Database>temp2</Database>
+                <Color>#FFA500</Color>
+            </Sensor>
+        </Sensors>
+    </ConfAppSec>       <!-- application section -->
+    <VarComSec>        <!-- variable section -->
+        <Active>Yes</Active>
+        <IP>192.168.1.48</IP>
+        <Systick>1607098833</Systick>
+        <uptime>354</uptime>
+        <UptimeTotal>2345</UptimeTotal> 
+        <delivPages>4</delivPages>
+        <delivPagesTotal>23</delivPagesTotal>
+        <PageReload>10</PageReload>
+        <Trans>45</Trans>
+        <TransTotal>56</TransTotal>
+        <goodTrans>5498</goodTrans>
+        <goodTransTotal>78</goodTransTotal>
+        <badTrans>27</badTrans>
+        <badTransTotal>90</badTransTotal>
+    </VarComSec>       <!-- variable section -->
+    <VarAppSec>
+        <LastValues>1</LastValues>
+        <LastValues>2</LastValues>
+        <LastValues>3</LastValues>
+	</VarAppSec>
+</Device_DS1820>

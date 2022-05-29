@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Dies soll eine XML werden zum komfortablen steuern der Devices -->
+<!-- https://www.python-forum.de/viewtopic.php?t=33485c -->
+<!-- http://www.willemer.de/informatik/python/xml.htm -->
+<!-- !!! see a description of the XML-Structure at the end of this file !!! -->
+<!--    Version 1.21 23.06.19
+            configuration for the ServESP server
+    CHN:
+    History:
+    30.03.20    V1.2    <archive>-Section added
+    23.03.20	V1.1	added <Tablexxxx> to defined whats displayed via DevView
+    30.11.19    V1.0b   added <RootPath> to simplify the Path entries
+                        other Path-entries should use {Root} which is replaced from
+                        the php program
+    19.11.19    V1.0a   new structure for single XML for eauch device
+    17.06.19    V1.0    init Version
+-->
+<Config>
+    <Nodes>
+        <Name>No-Name_8C_CE_4E_DE_B2_F0</Name>
+        <Name>ToF_Sensor_BC_DD_C2_24_3B_F4</Name>
+        <Name>Gewaechshaus_24_A1_60_3A_47_34</Name>
+        <Name>Pumpe_CC_50_E3_53_1E_58</Name>
+        <Name>Wohnzimmer_27_BF_CF_A0</Name>
+        <Name>Schuppen-DS_CC_50_E3_3C_17_68</Name>
+        <Name>Buero_68_C6_3A_87_FA_CE</Name>
+        <Name>Wintergarten_DC_4F_22_10_C6_0E</Name>
+        <Name>Schlafzimmer_CC_50_E3_3C_2F_1B</Name>
+        <Name>Heizung_CC_50_E3_3B_F6_4D</Name>
+        <Name>Heizung1_C2_8A_58_6E</Name>
+        <Name>Jan_CC_50_E3_5D_A7_A5</Name>
+        <Name>Lars_Zimmer_CC_50_E3_5D_A8_F3</Name>
+        <Name>Lars_Dachboden_CC_50_E3_3C_06_71</Name>
+        <Name>Keller_CC_50_E3_3C_13_D3</Name>
+        <Name>Steckdose-Schuppen_EC_FA_BC_9B_CC_1D</Name>
+        <Name>Treppe_84_F3_EB_B1_B0_A4</Name>
+        <Name>Aquarium_EC_FA_BC_12_F6_8B</Name>
+        <Name>Aquarium-2_EC_FA_BC_12_F4_31</Name>
+        <Name>Palisade_DC_4F_22_0A_F5_52</Name>
+        <Name>Kugellampen_DC_4F_22_37_59_ED</Name>
+        <Name>Schuppen_80_7D_3A_67_BD_24</Name>
+    </Nodes>
+
+    <!-- CHN: these are the values to be used by Devview.php-->
+    <TableCom>
+        <Name></Name>
+        <Type></Type>
+        <IP></IP>
+        <Systick></Systick>
+        <uptime></uptime>
+        <Active></Active>
+        <MAC></MAC>
+        <goodTrans></goodTrans>
+        <badTrans></badTrans>
+    </TableCom>
+
+    <TableSwitch>
+        <status></status>
+        <ontime></ontime>
+        <offtime></offtime>
+        <cycles></cycles>
+    </TableSwitch>
+
+
+    <TableDS1820>
+        <MeasCycle></MeasCycle>
+        <TransCycle></TransCycle>
+        <SensorValues></SensorValues>
+    </TableDS1820>
+
+    <TableToF>
+        <TransCycle></TransCycle>
+        <distance></distance>
+    </TableToF>
+
+    <!-- CHN: the archive programm should look up these files, the number represendts the count of stored files -->
+    <archive>
+	<Makegraphics.log>2</Makegraphics.log>
+	<dbupload.log>2</dbupload.log>
+        <ServESP.log>8</ServESP.log>
+        <arch.log>2</arch.log>
+        <ChangedIPs.log>6</ChangedIPs.log>
+        <cs.log>5</cs.log>
+        <DevView.log>4</DevView.log>
+        <cnt_not_0.lox>7</cnt_not_0.lox>
+<!--        <Monoop.lox>3</Monoop.lox> -->
+        <Garden.log>2</Garden.log>
+    </archive>
+
+    <ServESP>
+        <!-- CHN: Ebene Pathes/Files einfuehrenm dadurch in SW besser von anderen Tags zu unterscheiden -->
+        <Pathes>
+            <RootPath>/mnt/samba/Daten/Projekte/Raspberry/ServESP</RootPath>
+            <PicPath>{Root}/png</PicPath>
+            <LogPath>{Root}/log</LogPath>
+            <ArchPath>{Root}/log/archiv</ArchPath>
+            <RRDPath>{Root}/rrd</RRDPath>
+            <DataPath>{Root}</DataPath>
+            <ScenePath>{Root}/Scenes</ScenePath>
+            <ClassPath>{Root}/classes</ClassPath>
+            <FuncPath>{Root}/func</FuncPath>
+            <MiscPath>{Root}/Misc_Scripts</MiscPath>
+            <XMLPath>{Root}/XML</XMLPath>
+            <SunPath>/mnt/simcon</SunPath>
+            <HTMLPath>{Root}/HTML</HTMLPath>
+            <IPAdrPath>{Root}/IPAdr</IPAdrPath>
+            <SunCntrlPath>{Root}/SunCntrl</SunCntrlPath>
+        </Pathes>
+        <Files>
+            <LogFile>ServESP.log</LogFile>
+            <LogSceneFile>scenes.log</LogSceneFile>
+            <LogSunFile>sun.log</LogSunFile>
+            <LogTiFile>ti.log</LogTiFile>
+            <WeatherFile>Weather.xml</WeatherFile>
+            <OutTempFile>getouttemp.txt</OutTempFile>
+        </Files>
+
+        <Logging>DEBUG</Logging>
+        <Response>SHORT</Response>
+    </ServESP>
+
+    <MakeGraphics>
+    </MakeGraphics>
+
+    <BkUp>
+    </BkUp>
+
+    <getouttemp>
+    </getouttemp>
+
+    <sun>
+    </sun>
+</Config>
+
+<!-- description of the data set for nodes
+
+Kann man eine automatische Erkennung der Schluessel machen um automatisch alle Felder abzuklappern? dann
+brauch das Programm nicht angepasst werden wenn sich hier im XML was aendert
+-->

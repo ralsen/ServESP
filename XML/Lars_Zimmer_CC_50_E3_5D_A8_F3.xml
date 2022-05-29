@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Dies soll eine XML werden zum komfortablen steuern der Devices -->
+<!-- https://www.python-forum.de/viewtopic.php?t=33485c -->
+<!-- http://www.willemer.de/informatik/python/xml.htm -->
+<!-- !!! see a description of the XML-Structure at the end of this file !!! -->
+<!--    Version 1.21 23.06.19
+            configuration for the ServESP server
+            
+    History:
+    16.12.19    V1.0a   <HardwareSec> added for values that couldnt be changed (normaly)
+    19.11.19    V1.0a   new structure for single XML for eauch device
+    17.06.19    V1.0    init Version
+-->
+<Device_DS1820>
+    <HardwareSec>
+        <Type>DS1820</Type>
+        <Hardw>NODEMCU</Hardw>
+        <ChipID>E3:5D:A8:F3</ChipID>
+        <MAC>CC:50:E3:5D:A8:F3</MAC>
+    </HardwareSec>
+    <ConfComSec>       <!-- common section -->
+        <Name>Lars_Zimmer</Name>
+        <IP_Mode>DHCP</IP_Mode>
+        <PageReload>10</PageReload>
+        <Service>s.php</Service>
+        <ServerIP>192.168.1.28</ServerIP>
+        <Network>janzneu</Network>
+        <APName>ESPnet</APName>
+        <Hash>0x68d90c</Hash>
+        <Size>0x150</Size>
+        <TransCycle>300</TransCycle>
+        <Version>1.5k</Version>
+    </ConfComSec>		<!-- common section -->
+    <ConfAppSec>       <!-- application section (could be empty, e.g. for temp-sensors / or could contain the last transmitted values) -->
+        <MeasCycle>150</MeasCycle>
+        <Sensors>
+            <Sensor>
+                <Adr>28aacffb1813024f</Adr>
+                <Name>Lars Zimmer</Name>
+                <Database>temp0</Database>
+                <Color>#00FF00</Color>
+            </Sensor>
+            <Sensor>
+                <Adr>OutTemp</Adr>
+                <Name>Aussen</Name>
+                <Database>temp2</Database>
+                <Color>#FFA500</Color>
+            </Sensor>
+        </Sensors>
+    </ConfAppSec>       <!-- application section -->
+    <VarComSec>        <!-- variable section -->
+        <Active>Yes</Active>
+        <IP>192.168.1.57</IP>
+        <Systick>1607099284</Systick>
+        <uptime>1600392</uptime>
+        <UptimeTotal>0</UptimeTotal>        
+        <delivPages>4</delivPages>
+        <delivPagesTotal>0</delivPagesTotal>
+        <PageReload>10</PageReload>
+        <Trans>0</Trans>
+        <TransTotal>0</TransTotal>
+        <goodTrans>5304</goodTrans>
+        <goodTransTotal>0</goodTransTotal>
+        <badTrans>30</badTrans>
+        <badTransTotal>0</badTransTotal>
+    </VarComSec>       <!-- variable section -->
+    <VarAppSec>
+        <LastValues>1</LastValues>
+        <LastValues>2</LastValues>
+        <LastValues>3</LastValues>
+    </VarAppSec>
+</Device_DS1820>

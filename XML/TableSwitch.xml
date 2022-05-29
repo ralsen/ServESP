@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Dies soll eine XML werden zum komfortablen steuern der Devices -->
+<!-- https://www.python-forum.de/viewtopic.php?t=33485c -->
+<!-- http://www.willemer.de/informatik/python/xml.htm -->
+<!-- !!! see a description of the XML-Structure at the end of this file !!! -->
+<!--    Version 1.21 23.06.19
+            configuration for the ServESP server
+
+    this xml file descript the device table structure
+            
+    History:
+    16.02.20    V0.1    init version
+-->
+
+<TableSwitch>
+    <Name></Name>
+    <Type></Type>
+    <Hardw></Hardw>
+    <IP></IP>
+    <MAC></MAC>
+    <uptime></uptime>
+    <goodTrans></goodTrans>
+    <badTrans></badTrans>
+    <TransCycle></TransCycle>
+    <Version></Version>
+    <status></status>
+    <ontime></ontime>
+    <offtime></offtime>
+    <cycles></cycles>
+</TableSwitch>

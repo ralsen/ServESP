@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Dies soll eine XML werden zum komfortablen steuern der Devices -->
+<!-- https://www.python-forum.de/viewtopic.php?t=33485c -->
+<!-- http://www.willemer.de/informatik/python/xml.htm -->
+<!-- !!! see a description of the XML-Structure at the end of this file !!! -->
+<!--    Version 1.21 23.06.19
+            configuration for the ServESP server
+            
+        Version 1.0 17.06.2019
+            init Version
+-->
+<Device_DS1820>
+    <HardwareSec>
+        <Type>DS1820</Type>
+        <Hardw>NodeMCU</Hardw>
+        <ChipID>11:22:33:44</ChipID>
+        <MAC>CC:50:E3:3C:13:D3</MAC>
+    </HardwareSec>
+    <ConfComSec>       <!-- common section -->
+        <Name>TEST</Name>
+        <IP_Mode>DHCP</IP_Mode>
+        <PageReload>var</PageReload>
+        <Service>/ServESP.php/</Service>
+        <ServerIP>192.168.1.28</ServerIP>
+        <Network>janzneu</Network>
+        <APName>HOMAnet</APName>
+        <Hash>0x65af1b</Hash>
+        <ConfSize>0x118</ConfSize>
+        <StatusCycle>86400</StatusCycle>
+        <Version>N/A</Version>
+    </ConfComSec>		<!-- common section -->
+    
+    <ConfAppSec>       <!-- application section (could be empty, e.g. for temp-sensors / or could contain the last transmitted values) -->
+        <MeasCycle>150</MeasCycle>
+        <TransCycle>300</TransCycle>
+        <Sensors>
+            <Sensor>
+                <Adr>28ff76f3c1170505</Adr>
+                <Name>Lars_D</Name>
+                <Database>temp0</Database>
+                <Color>#FF0000</Color>
+            </Sensor>
+            <Sensor>
+                <Adr>OutTemp</Adr>
+                <Name>Aussen</Name>
+                <Database>temp1</Database>
+                <Color>#FFFF00</Color>
+            </Sensor>
+        </Sensors>
+    </ConfAppSec>       <!-- application section -->
+    <VarComSec>        <!-- variable section -->
+        <Active>Yes</Active>
+        <IP>192.168.1.31</IP>
+        <Systick>1576015346</Systick>
+        <uptime>N/A</uptime>
+        <UptimeLast>var</UptimeLast>
+        <UptimeTotal>var</UptimeTotal>        
+    </VarComSec>       <!-- variable section -->
+    <VarAppSec>
+    </VarAppSec>
+</Device_DS1820>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Dies soll eine XML werden zum komfortablen steuern der Devices -->
+<!-- https://www.python-forum.de/viewtopic.php?t=33485c -->
+<!-- http://www.willemer.de/informatik/python/xml.htm -->
+<!-- !!! see a description of the XML-Structure at the end of this file !!! -->
+<!--    Version 1.21 23.06.19
+            configuration for the ServESP server
+            
+    History:
+    19.11.19    V1.0a   new structure for single XML for eauch device
+    17.06.19    V1.0    init Version
+-->
+<Device_Switch>
+    <HardwareSec>
+        <Type>Switch</Type>
+        <Hardw>SONOFF_S20</Hardw>
+        <ChipID>BC:12:F6:8B</ChipID>
+        <MAC>EC:FA:BC:12:F6:8B</MAC>
+    </HardwareSec>
+    <ConfComSec>       <!-- common section -->
+        <Name>Aquarium</Name>
+        <IP_Mode>DHCP</IP_Mode>
+        <PageReload>10</PageReload>
+        <Service>s.php</Service>
+        <ServerIP>192.168.1.28</ServerIP>
+        <Network>janzneu</Network>
+        <APName>ESPnet</APName>
+        <Hash>0x6f7075</Hash>
+        <ConfSize>0x118</ConfSize>
+        <TransCycle>3600</TransCycle>
+        <Version>1.5k</Version>
+    </ConfComSec>		<!-- common section -->
+    <ConfAppSec>       <!-- application section (could be empty, e.g. for temp-sensors / or could contain the last transmitted values) -->
+        <On>SunSet</On>
+        <Off>SunRise</Off>
+    </ConfAppSec>       <!-- application section -->
+    <VarComSec>        <!-- variable section -->
+        <Active>Yes</Active>
+        <IP>192.168.1.45</IP>
+        <Systick>1607097599</Systick>
+        <uptime>1651778</uptime>
+        <UptimeTotal>0</UptimeTotal>        
+        <delivPages>112</delivPages>
+        <delivPagesTotal>0</delivPagesTotal>
+        <Trans>0</Trans>
+        <TransTotal>0</TransTotal>
+        <goodTrans>475</goodTrans>
+        <goodTransTotal>0</goodTransTotal>
+        <badTrans>3</badTrans>
+        <badTransTotal>0</badTransTotal>
+    <PageReload>10</PageReload></VarComSec>       <!-- variable section -->
+    <VarAppSec>
+        <ontime>555438</ontime>
+        <OntimeTotal>var</OntimeTotal>
+        <offtime>1096340</offtime>
+        <OfftimeTotal>var</OfftimeTotal>
+        <cycles>42</cycles>
+        <CyclesTotal>var</CyclesTotal>
+        <status>AUS</status>
+    </VarAppSec>
+</Device_Switch>
