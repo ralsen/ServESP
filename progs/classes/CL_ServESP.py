@@ -1,6 +1,9 @@
 import logging
 import time
 
+logger = logging.getLogger("logger")
+jrnl = logging.getLogger("jrnl")
+
 class ServESP:
 
 #    CONFPATH="/mnt/samba/Daten/Projekte/Raspberry/ServESP/XML/"
@@ -26,20 +29,28 @@ class ServESP:
             self.LogFile = self.CONFPATH+"/log/"+self.ProgName+".loy"
         else:
             self.LogFile = self.pathes["LogPath"]+"/"+self.ProgName+".log"
-            
-        logging.basicConfig(
-        filename = self.LogFile,
-        level = logging.DEBUG,
-        style = "{",
-        format = "{asctime} [{levelname:8}] {message}",
-        datefmt = "%d.%m.%Y %H:%M:%S")
 
-        self.LogIt("---> "+self.ProgName+" V"+self.ProgVersion+" started", logging.INFO)
+        formatter =  logging.Formatter('- %(asctime)s :: %(levelname)-s :: %(message)s [%(module)s] [%(lineno)s]')
+        logger = logging.getLogger("logger")
+        hdlrLogger = logging.FileHandler(self.LogFile)
+        hdlrLogger.setFormatter(formatter)
+        logger.setLevel(logging.DEBUG)
+        logger.addHandler(hdlrLogger)
+
+        jrnl = logging.getLogger("jrnl")
+        hdlrJrnl = logging.FileHandler("Journl") #self.LogFile)
+        hdlrJrnl.setFormatter(formatter)
+        jrnl.setLevel(logging.DEBUG)
+        jrnl.addHandler(hdlrJrnl)
+
+        logger.info("---> "+self.ProgName+" V"+self.ProgVersion+" started")
+        logger.info("here we are")
+        jrnl.debug("in the journal")
         if(configOK == False):
             self.LogIt("configuration failed", logging.CRITICAL)
             return
         else:
-            self.LogIt("configuration file: "+ self.CONFFILE+" OK", logging.INFO)
+            logger.info("configuration file: "+ self.CONFFILE+" OK")
 # --------------------------------------------------------------------------------------------------
 
     def GetConfig(self):
@@ -60,25 +71,25 @@ class ServESP:
 # --------------------------------------------------------------------------------------------------
 
     def Close(self):
-        self.LogIt("<--- " + self.ProgName+" V"+self.ProgVersion+" ended", logging.INFO)
-        logging.shutdown()
+        logger.info("<--- " + self.ProgName+" V"+self.ProgVersion+" ended.")
+        #logger.shutdown()
 
 # --------------------------------------------------------------------------------------------------
 
-    def LogIt(self, outtext, err):
-        if (err == logging.CRITICAL):
+    def LogItx(self, outtext, err):
+        if (err == logger.critical):
             print (time.ctime()+" "+"[CRITICAL] "+outtext)
-            logging.error(outtext)
-            logging.critical("Program is stopping now !!!")
+            logger.error(outtext)
+            logger.critical("Program is stopping now !!!")
             self .Close()
             print("Program is stopping now !!!")
             exit(False)
         if (err == logging.INFO):
             print (time.ctime()+" "+"[INFO    ] "+outtext)
-            logging.info(outtext) 
+            logger.info(outtext) 
         if (err == logging.WARNING):
             print (time.ctime()+" "+"[WARNING ] "+outtext)
-            logging.warning(outtext) 
+            logger.warning(outtext) 
             
 # --------------------------------------------------------------------------------------------------
 
@@ -97,5 +108,5 @@ class ServESP:
         msg = header + MailText
         smtpserver.sendmail(gmail__user, to, msg)
         smtpserver.close()
-        ServESP.LogIt(self, "Email was send to: "+to+", Subject: "+SubjectText+", Text: "+MailText, logging.INFO)
+        ServESP.LogIt(self, "Email was send to: "+to+", Subject: "+SubjectText+", Text: "+MailText, logger.info)
 

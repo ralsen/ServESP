@@ -17,6 +17,8 @@ import sys
 import os
 import xml.etree.ElementTree as TableXML
 
+logger = logging.getLogger("logger")
+jrnl = logging.getLogger("jrnl")
 
 PROGNAME = "DevView"
 PROGVERS = "2.2"
@@ -29,36 +31,38 @@ se = CL_ServESP.ServESP(PROGNAME, PROGVERS)
 phpout = '<table border="1" cellpadding="5" align="left">'
 
 def GetXMLValue(key):
+    print("GetXMLValue(key):", key)
     try:
         if (NodeXML.find(key)):
             print(key+" found")
-            se.LogIt(key+" found", logging.INFO)
+            logger.info(key+" found")
             
     except AttributeError:
         print (key+" not Found")
-        se.LogIt(key+" not Found", logging.CRITICAL)
+        logger.critical(key+" not Found")
+    print(NodeXML.find(key).text)
     return(NodeXML.find(key).text)
     
 
 # looking for all nodes in config
 for Name in se.Config.findall('.//Nodes/Name'):
-    se.LogIt ("--# "+Name.text, logging.INFO)            
+    logger.info (Name.text)            
 
     # try to open the nodes XML
     try:
-        se.LogIt(se.pathes["XMLPath"]+Name.text+".xml", logging.INFO)
+        logger.info(se.pathes["XMLPath"]+Name.text+".xml")
         RootXML = se.NodeConfig.parse(se.pathes["XMLPath"]+Name.text+".xml")
     except FileNotFoundError:
-        se.LogIt("file: "+se.pathes["XMLPath"]+Name.text+".xml"+" not found", logging.CRITICAL)
+        logger.info("file: "+se.pathes["XMLPath"]+Name.text+".xml"+" not found")
         print( "file: "+se.pathes["XMLPath"]+Name.tex+".xml"+" not found")
     NodeXML = RootXML.getroot()
 
     # try to open the table XML for the type of the node
     try:
-        se.LogIt(se.pathes["XMLPath"]+"Table"+GetXMLValue(".//Type")+".xml", logging.INFO)
+        logger.info(se.pathes["XMLPath"]+"Table"+GetXMLValue(".//Type")+".xml")
         RootTable = TableXML.parse(se.pathes["XMLPath"]+"Table"+GetXMLValue(".//Type")+".xml")
     except FileNotFoundError:
-        se.LogIt("file: "+se.pathes["XMLPath"]++"Table"+GetXMLValue(".//Type")+".xml"+" not found", logging.CRITICAL)
+        logger.critical("file: "+se.pathes["XMLPath"]++"Table"+GetXMLValue(".//Type")+".xml"+" not found")
         print( "file: "+se.pathes["XMLPath"]++"Table"+GetXMLValue(".//Type")+".xml"+" not found")
 
     Table = RootTable.getroot()

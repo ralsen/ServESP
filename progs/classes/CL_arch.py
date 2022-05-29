@@ -32,6 +32,8 @@ import glob
 import os
 import gzip
 
+logger = logging.getLogger("logger")
+jrnl = logging.getLogger("jrnl")
 
 from datetime import datetime
 
@@ -51,7 +53,7 @@ class Archive:
     def __init__(self):
         print("here we are in ")
         #print (ServESP)
-        CL_ServESP.ServESP.LogIt (self, CLASSNAME+" V"+VERNR+" initialized.", logging.INFO)
+        logger (CLASSNAME+" V"+VERNR+" initialized.")
         for eachArg in sys.argv:   
             #print ("Parameter:"+eachArg)
             if (eachArg == "keep"):
@@ -60,55 +62,55 @@ class Archive:
         pass
 
     def CollectArchives(self):
-        CL_ServESP.ServESP.LogIt (self, "CollectArchives() start ", logging.INFO)
+        logger.info(self, "CollectArchives() start ")
         Archive.ArchiveFiles=[]
         
         for Config in CL_ServESP.ServESP.Config.findall(".//archive"):
             for archive in Config:
                 Archive.ArchiveFiles += [archive.tag]
                 Archive.ArchiveCnt[archive.tag] = int (archive.text)
-        CL_ServESP.ServESP.LogIt(self, "List of files to archive: ", logging.INFO)
-        CL_ServESP.ServESP.LogIt(self, str(Archive.ArchiveCnt), logging.INFO)
-        CL_ServESP.ServESP.LogIt(self, "CollectArchives() end ", logging.INFO)
+        logger.info(self, "List of files to archive: ")
+        logger.info(self, str(Archive.ArchiveCnt))
+        logger.info(self, "CollectArchives() end ")
 
     def DoArchive(self):
-        CL_ServESP.ServESP.LogIt (self, "DoArchive() start ", logging.INFO)
+        logger.info(self, "DoArchive() start ")
         for file in self.ArchiveCnt.keys():
             date_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
             ZipFile = CL_ServESP.ServESP.pathes["ArchPath"]+file+"_"+date_time+".gz"
             OrgFile = CL_ServESP.ServESP.pathes["LogPath"]+file
-            CL_ServESP.ServESP.LogIt (self, "---------------", logging.INFO)
+            logger.info(self, "---------------")
             try:
                 f2z = open(OrgFile, "rb")
                 f2zContent = f2z.read()
                 f2z.close()
             except:
-                CL_ServESP.ServESP.LogIt(self, "NOT FOUND    : "+OrgFile, logging.WARNING)
+                logger.info(self, "NOT FOUND    : "+OrgFile)
                 continue
-            CL_ServESP.ServESP.LogIt (self, "creating Zip : "+ZipFile, logging.INFO)
+            logger.info(self, "creating Zip : "+ZipFile)
             try:
                 if (self.keep == False):
-                    CL_ServESP.ServESP.LogIt (self, "delete it    : ", logging.INFO)
+                    logger.info(self, "delete it    : ")
                     os.remove(OrgFile)
                 zf = gzip.GzipFile(ZipFile, 'wb')
                 zf.write(f2zContent)
                 zf.close()
             except:
-                CL_ServESP.ServESP.LogIt(self, "XXXXXNOT FOUND: "+OrgFile, logging.WARNING)
+                logger.warning(self, "XXXXXNOT FOUND: "+OrgFile)
 
             FileList = (glob.glob(CL_ServESP.ServESP.pathes["ArchPath"]+file+"*.gz"))
             FileList = sorted(FileList)
-            CL_ServESP.ServESP.LogIt (self, "current files: " + str(len(FileList)), logging.INFO)
-            CL_ServESP.ServESP.LogIt (self, "max files    : " + str(Archive.ArchiveCnt[file]    ), logging.INFO)
+            logger.info(self, "current files: " + str(len(FileList)))
+            logger.info(self, "max files    : " + str(Archive.ArchiveCnt[file]    ))
             toDelete = len(FileList) - Archive.ArchiveCnt[file]
             if (toDelete>0):
-                CL_ServESP.ServESP.LogIt (self, "to delete    : " + str(toDelete), logging.INFO)
+                logger.info(self, "to delete    : " + str(toDelete))
                 for currFile in FileList:
                     if(toDelete>0):
-                        CL_ServESP.ServESP.LogIt (self, "deleting     : "+currFile, logging.INFO)
+                        logger.info(self, "deleting     : "+currFile)
                         os.remove(currFile)
                         toDelete -= 1
-        CL_ServESP.ServESP.LogIt(self, "DoArchive() end", logging.INFO)
+        logger.info(self, "DoArchive() end")
 
 """
 ------------------------------------------------------------------------------------------------------------
