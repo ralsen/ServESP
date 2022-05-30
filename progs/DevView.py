@@ -42,7 +42,6 @@ def GetXMLValue(key):
     print(NodeXML.find(key).text)
     return(NodeXML.find(key).text)
     
-
 # looking for all nodes in config
 for Name in se.Config.findall('.//Nodes/Name'):
     logger.info (Name.text)            
