@@ -25,7 +25,6 @@ PROGVERS = "2.2"
 
 #******************************************************************************************************
 
-
 se = CL_ServESP.ServESP(PROGNAME, PROGVERS)
 
 phpout = '<table border="1" cellpadding="5" align="left">'
