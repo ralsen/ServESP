@@ -1,25 +1,70 @@
-29.05.2022 15:43:35 [INFO    ] ---> DevView V2.2 started
-29.05.2022 15:43:35 [INFO    ] configuration file: ./XML/Config-ESP.xml OK
-29.05.2022 15:43:35 [INFO    ] No-Name_8C_CE_4E_DE_B2_F0
-29.05.2022 15:43:35 [INFO    ] ./XML/No-Name_8C_CE_4E_DE_B2_F0.xml
-29.05.2022 15:43:35 [INFO    ] ./XML/TableDS1820.xml
-29.05.2022 15:45:30 [INFO    ] ---> DevView V2.2 started
-29.05.2022 15:45:30 [INFO    ] configuration file: ./XML/Config-ESP.xml OK
-29.05.2022 15:45:30 [INFO    ] No-Name_8C_CE_4E_DE_B2_F0
-29.05.2022 15:45:30 [INFO    ] ./XML/No-Name_8C_CE_4E_DE_B2_F0.xml
-29.05.2022 15:45:30 [INFO    ] ./XML/TableDS1820.xml
-29.05.2022 15:46:30 [INFO    ] ---> DevView V2.2 started
-29.05.2022 15:46:30 [INFO    ] configuration file: ./XML/Config-ESP.xml OK
-29.05.2022 15:46:30 [INFO    ] No-Name_8C_CE_4E_DE_B2_F0
-29.05.2022 15:46:30 [INFO    ] ./XML/No-Name_8C_CE_4E_DE_B2_F0.xml
-29.05.2022 15:46:30 [INFO    ] ./XML/TableDS1820.xml
-29.05.2022 15:46:43 [INFO    ] ---> DevView V2.2 started
-29.05.2022 15:46:43 [INFO    ] configuration file: ./XML/Config-ESP.xml OK
-29.05.2022 15:46:43 [INFO    ] No-Name_8C_CE_4E_DE_B2_F0
-29.05.2022 15:46:43 [INFO    ] ./XML/No-Name_8C_CE_4E_DE_B2_F0.xml
-29.05.2022 15:46:43 [INFO    ] ./XML/TableDS1820.xml
-29.05.2022 15:53:57 [INFO    ] ---> DevView V2.2 started
-29.05.2022 15:53:57 [INFO    ] configuration file: ./XML/Config-ESP.xml OK
-29.05.2022 15:53:57 [INFO    ] --# No-Name_8C_CE_4E_DE_B2_F0
-29.05.2022 15:53:57 [INFO    ] ./XML/No-Name_8C_CE_4E_DE_B2_F0.xml
-29.05.2022 15:53:57 [INFO    ] ./XML/TableDS1820.xml
+- 2022-05-29 17:11:17,143 :: INFO :: ---> DevView V2.2 started [CL_ServESP] [46]
+- 2022-05-29 17:11:17,143 :: INFO :: here we are [CL_ServESP] [47]
+- 2022-05-29 17:11:17,143 :: INFO :: configuration file: ./XML/Config-ESP.xml OK [CL_ServESP] [53]
+- 2022-05-29 17:11:17,143 :: INFO :: No-Name_8C_CE_4E_DE_B2_F0 [DevView] [49]
+- 2022-05-29 17:11:17,143 :: INFO :: ./XML/No-Name_8C_CE_4E_DE_B2_F0.xml [DevView] [53]
+- 2022-05-29 17:11:17,143 :: INFO :: ./XML/TableDS1820.xml [DevView] [62]
+- 2022-05-29 17:11:17,182 :: INFO :: ToF_Sensor_BC_DD_C2_24_3B_F4 [DevView] [49]
+- 2022-05-29 17:11:17,182 :: INFO :: ./XML/ToF_Sensor_BC_DD_C2_24_3B_F4.xml [DevView] [53]
+- 2022-05-29 17:11:17,185 :: INFO :: ./XML/TableToF.xml [DevView] [62]
+- 2022-05-29 17:11:17,209 :: INFO :: Gewaechshaus_24_A1_60_3A_47_34 [DevView] [49]
+- 2022-05-29 17:11:17,209 :: INFO :: ./XML/Gewaechshaus_24_A1_60_3A_47_34.xml [DevView] [53]
+- 2022-05-29 17:11:17,216 :: INFO :: ./XML/TableDS1820.xml [DevView] [62]
+- 2022-05-29 17:11:17,243 :: INFO :: Pumpe_CC_50_E3_53_1E_58 [DevView] [49]
+- 2022-05-29 17:11:17,244 :: INFO :: ./XML/Pumpe_CC_50_E3_53_1E_58.xml [DevView] [53]
+- 2022-05-29 17:11:17,245 :: INFO :: ./XML/TableSwitch.xml [DevView] [62]
+- 2022-05-29 17:11:17,278 :: INFO :: Wohnzimmer_27_BF_CF_A0 [DevView] [49]
+- 2022-05-29 17:11:17,278 :: INFO :: ./XML/Wohnzimmer_27_BF_CF_A0.xml [DevView] [53]
+- 2022-05-29 17:11:17,285 :: INFO :: ./XML/TableDS1820.xml [DevView] [62]
+- 2022-05-29 17:11:17,309 :: INFO :: Schuppen-DS_CC_50_E3_3C_17_68 [DevView] [49]
+- 2022-05-29 17:11:17,310 :: INFO :: ./XML/Schuppen-DS_CC_50_E3_3C_17_68.xml [DevView] [53]
+- 2022-05-29 17:11:17,312 :: INFO :: ./XML/TableDS1820.xml [DevView] [62]
+- 2022-05-29 17:11:17,357 :: INFO :: Buero_68_C6_3A_87_FA_CE [DevView] [49]
+- 2022-05-29 17:11:17,357 :: INFO :: ./XML/Buero_68_C6_3A_87_FA_CE.xml [DevView] [53]
+- 2022-05-29 17:11:17,360 :: INFO :: ./XML/TableDS1820.xml [DevView] [62]
+- 2022-05-29 17:11:17,392 :: INFO :: Wintergarten_DC_4F_22_10_C6_0E [DevView] [49]
+- 2022-05-29 17:11:17,392 :: INFO :: ./XML/Wintergarten_DC_4F_22_10_C6_0E.xml [DevView] [53]
+- 2022-05-29 17:11:17,395 :: INFO :: ./XML/TableDS1820.xml [DevView] [62]
+- 2022-05-29 17:11:17,427 :: INFO :: Schlafzimmer_CC_50_E3_3C_2F_1B [DevView] [49]
+- 2022-05-29 17:11:17,427 :: INFO :: ./XML/Schlafzimmer_CC_50_E3_3C_2F_1B.xml [DevView] [53]
+- 2022-05-29 17:11:17,428 :: INFO :: ./XML/TableDS1820.xml [DevView] [62]
+- 2022-05-29 17:11:17,456 :: INFO :: Heizung_CC_50_E3_3B_F6_4D [DevView] [49]
+- 2022-05-29 17:11:17,456 :: INFO :: ./XML/Heizung_CC_50_E3_3B_F6_4D.xml [DevView] [53]
+- 2022-05-29 17:11:17,458 :: INFO :: ./XML/TableDS1820.xml [DevView] [62]
+- 2022-05-29 17:11:17,499 :: INFO :: Heizung1_C2_8A_58_6E [DevView] [49]
+- 2022-05-29 17:11:17,499 :: INFO :: ./XML/Heizung1_C2_8A_58_6E.xml [DevView] [53]
+- 2022-05-29 17:11:17,502 :: INFO :: ./XML/TableDS1820.xml [DevView] [62]
+- 2022-05-29 17:11:17,533 :: INFO :: Jan_CC_50_E3_5D_A7_A5 [DevView] [49]
+- 2022-05-29 17:11:17,533 :: INFO :: ./XML/Jan_CC_50_E3_5D_A7_A5.xml [DevView] [53]
+- 2022-05-29 17:11:17,537 :: INFO :: ./XML/TableDS1820.xml [DevView] [62]
+- 2022-05-29 17:11:17,562 :: INFO :: Lars_Zimmer_CC_50_E3_5D_A8_F3 [DevView] [49]
+- 2022-05-29 17:11:17,562 :: INFO :: ./XML/Lars_Zimmer_CC_50_E3_5D_A8_F3.xml [DevView] [53]
+- 2022-05-29 17:11:17,566 :: INFO :: ./XML/TableDS1820.xml [DevView] [62]
+- 2022-05-29 17:11:17,589 :: INFO :: Lars_Dachboden_CC_50_E3_3C_06_71 [DevView] [49]
+- 2022-05-29 17:11:17,589 :: INFO :: ./XML/Lars_Dachboden_CC_50_E3_3C_06_71.xml [DevView] [53]
+- 2022-05-29 17:11:17,591 :: INFO :: ./XML/TableDS1820.xml [DevView] [62]
+- 2022-05-29 17:11:17,619 :: INFO :: Keller_CC_50_E3_3C_13_D3 [DevView] [49]
+- 2022-05-29 17:11:17,619 :: INFO :: ./XML/Keller_CC_50_E3_3C_13_D3.xml [DevView] [53]
+- 2022-05-29 17:11:17,621 :: INFO :: ./XML/TableDS1820.xml [DevView] [62]
+- 2022-05-29 17:11:17,651 :: INFO :: Steckdose-Schuppen_EC_FA_BC_9B_CC_1D [DevView] [49]
+- 2022-05-29 17:11:17,651 :: INFO :: ./XML/Steckdose-Schuppen_EC_FA_BC_9B_CC_1D.xml [DevView] [53]
+- 2022-05-29 17:11:17,654 :: INFO :: ./XML/TableSwitch.xml [DevView] [62]
+- 2022-05-29 17:11:17,684 :: INFO :: Treppe_84_F3_EB_B1_B0_A4 [DevView] [49]
+- 2022-05-29 17:11:17,684 :: INFO :: ./XML/Treppe_84_F3_EB_B1_B0_A4.xml [DevView] [53]
+- 2022-05-29 17:11:17,687 :: INFO :: ./XML/TableSwitch.xml [DevView] [62]
+- 2022-05-29 17:11:17,719 :: INFO :: Aquarium_EC_FA_BC_12_F6_8B [DevView] [49]
+- 2022-05-29 17:11:17,719 :: INFO :: ./XML/Aquarium_EC_FA_BC_12_F6_8B.xml [DevView] [53]
+- 2022-05-29 17:11:17,722 :: INFO :: ./XML/TableSwitch.xml [DevView] [62]
+- 2022-05-29 17:11:17,904 :: INFO :: Aquarium-2_EC_FA_BC_12_F4_31 [DevView] [49]
+- 2022-05-29 17:11:17,904 :: INFO :: ./XML/Aquarium-2_EC_FA_BC_12_F4_31.xml [DevView] [53]
+- 2022-05-29 17:11:17,907 :: INFO :: ./XML/TableSwitch.xml [DevView] [62]
+- 2022-05-29 17:11:17,970 :: INFO :: Palisade_DC_4F_22_0A_F5_52 [DevView] [49]
+- 2022-05-29 17:11:17,970 :: INFO :: ./XML/Palisade_DC_4F_22_0A_F5_52.xml [DevView] [53]
+- 2022-05-29 17:11:17,972 :: INFO :: ./XML/TableSwitch.xml [DevView] [62]
+- 2022-05-29 17:11:17,999 :: INFO :: Kugellampen_DC_4F_22_37_59_ED [DevView] [49]
+- 2022-05-29 17:11:17,999 :: INFO :: ./XML/Kugellampen_DC_4F_22_37_59_ED.xml [DevView] [53]
+- 2022-05-29 17:11:18,001 :: INFO :: ./XML/TableSwitch.xml [DevView] [62]
+- 2022-05-29 17:11:18,054 :: INFO :: Schuppen_80_7D_3A_67_BD_24 [DevView] [49]
+- 2022-05-29 17:11:18,054 :: INFO :: ./XML/Schuppen_80_7D_3A_67_BD_24.xml [DevView] [53]
+- 2022-05-29 17:11:18,056 :: INFO :: ./XML/TableSwitch.xml [DevView] [62]
+- 2022-05-29 17:11:18,093 :: INFO :: <--- DevView V2.2 ended. [CL_ServESP] [74]
