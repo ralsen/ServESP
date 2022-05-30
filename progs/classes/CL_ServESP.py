@@ -26,19 +26,20 @@ class ServESP:
         self.ProgVersion = Version
         configOK = self.GetConfig()
         if(configOK==False):
-            self.LogFile = self.CONFPATH+"/log/"+self.ProgName+".loy"
+            LogFile = self.CONFPATH+"/log/"+self.ProgName+".loy"
         else:
-            self.LogFile = self.pathes["LogPath"]+"/"+self.ProgName+".log"
-
-        formatter =  logging.Formatter('- %(asctime)s :: %(levelname)-s :: %(message)s [%(module)s] [%(lineno)s]')
+            LogFile = self.pathes["LogPath"]+"/"+self.ProgName+".log"
+            JrnlFile = self.pathes["LogPath"]+"/"+self.ProgName+".jrnl"
+        #formatter =  logging.Formatter('%(asctime)s :: %(levelname)-s :: %(message)s [%(module)s] [%(lineno)s]')
+        formatter =  logging.Formatter('%(asctime)s - %(message)s [%(module)s] [%(lineno)s]')
         logger = logging.getLogger("logger")
-        hdlrLogger = logging.FileHandler(self.LogFile)
+        hdlrLogger = logging.FileHandler(LogFile)
         hdlrLogger.setFormatter(formatter)
         logger.setLevel(logging.DEBUG)
         logger.addHandler(hdlrLogger)
 
         jrnl = logging.getLogger("jrnl")
-        hdlrJrnl = logging.FileHandler("Journl") #self.LogFile)
+        hdlrJrnl = logging.FileHandler(JrnlFile)
         hdlrJrnl.setFormatter(formatter)
         jrnl.setLevel(logging.DEBUG)
         jrnl.addHandler(hdlrJrnl)
