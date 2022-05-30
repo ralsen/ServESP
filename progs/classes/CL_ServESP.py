@@ -19,6 +19,7 @@ class ServESP:
     pathes = {}
     files = {}
     
+    
     ProgName = ""
     ProgVersion = ""
     def __init__(self, Name, Version):
